@@ -6,7 +6,7 @@ import TodayWeather from './components/TodayWeather';
 import './App.css';
 
 const App = () => {
-  const [city, setCity] = useState('');
+  const [city, setCity] = useState('New York');
   const [weatherData, setWeatherData] = useState(null);
   const [currentWeatherData, setCurrentWeatherData] = useState(null);
   const [error, setError] = useState(null);
@@ -103,10 +103,10 @@ const App = () => {
         );
 
   useEffect(() => {
-    // Fetch New York as the default city when the app loads
-    fetchWeather('New York');
-    fetchCurrentWeather('New York');
-  }, [unit]);
+    // Fetch the weather data for the current city (default 'New York') whenever the unit or city changes
+    fetchWeather(city);
+    fetchCurrentWeather(city);
+  }, [unit, city]); // Re-fetch data if unit or city changes
 
   return (
     <div className='app'>
@@ -129,7 +129,7 @@ const App = () => {
       {error && <p>{error}</p>}
 
       {/* Filters */}
-      {weatherData && (
+      {weatherData && !error && (
         <>
           <div className='filters'>
             <Filters handleConditionChange={(e) => setFilterCondition(e.target.value)} />
