@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+.app {
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+h1 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  text-align: left;
+}
+h2 {
+  font-size: 4rem;
+  margin: 1rem auto;
+}
+h3 {
+  font-size: 2rem;
+}
+.weather-card h3 {
+  font-size: 1.5rem;
+}
+.weather-card h4 {
+  font-size: 2.5rem;
+  padding: 0;
+  margin: 1rem;
+}
+.search-div {
+  margin: 4rem auto;
+}
+.temp {
+  font-size: 2rem;
+}
+.current-temp {
+  font-size: 4rem;
+  margin: 0;
+}
+.today-weather {
+  width: 100%;
+  text-align: center;
+  margin: 2rem auto;
+  background-color: #05257e;
+  padding: 2rem 0rem;
+  border-radius: 8px;
+}
+.condition {
+  font-size: 1.5rem;
+}
+
+.stats {
+  font-size: 1.5rem;
+}
+
+form {
+  margin-bottom: 2rem;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+@media (max-width: 940px) {
+  .filters {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+.unit-toggle {
+  margin-left: 1rem;
+}
+
+.weather-grid {
+  display: grid;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+  padding: 0;
+  grid-template-columns: repeat(5, 1fr);
+}
+@media (max-width: 900px) {
+  .weather-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .weather-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.weather-card {
+  background: #05257e;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.forecast-type {
+  margin-left: 1rem;
+}
+
+.summary {
+  width: 100%;
+  text-align: center;
+  margin: 2rem auto;
+  background-color: #05257e;
+  padding: 2rem 0rem;
+  border-radius: 8px;
+}
+
+.summary h3 {
+  margin-bottom: 1rem;
+}
+
+/* Style for the search bar */
+form input[type='text'] {
+  padding: 0.5rem 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 250px;
+  margin-right: 1rem;
+  transition: border-color 0.3s;
+}
+
+form input[type='text']:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Style for the search button */
+form button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* Style for the filter dropdowns */
+select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Style for the Celsius/Fahrenheit toggle button */
+.unit-toggle button {
+  padding: 0.5rem 1rem;
+  background-color: #ffbf36;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: 2px solid #b47b01;
+}
+
+.unit-toggle button:hover {
+  background-color: #e99f00;
+  border: 2px solid #b47b01;
+}
+
+.filters-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.unit-toggle {
+  margin-left: 1rem;
+  width: 200px;
+}
+
+.forecast-type {
+  margin-left: 1rem;
+}
