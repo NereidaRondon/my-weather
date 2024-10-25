@@ -6,7 +6,8 @@ import TodayWeather from './components/TodayWeather';
 import './App.css';
 
 const App = () => {
-  const [city, setCity] = useState('New York');
+  const [city, setCity] = useState('New York'); // Current city state
+  const [searchInput, setSearchInput] = useState(''); // Separate search input state
   const [weatherData, setWeatherData] = useState(null);
   const [currentWeatherData, setCurrentWeatherData] = useState(null);
   const [error, setError] = useState(null);
@@ -55,9 +56,11 @@ const App = () => {
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (city) {
-      fetchWeather(city);
-      setCity('');
+    if (searchInput) {
+      setCity(searchInput); // Update the current city with the search input
+      fetchWeather(searchInput);
+      fetchCurrentWeather(searchInput); // Fetch current weather as well
+      setSearchInput(''); // Clear the search input field
     }
   };
 
@@ -117,8 +120,8 @@ const App = () => {
         <form onSubmit={handleSubmit}>
           <input
             type='text'
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)} // Use the searchInput for the input field
             placeholder='Enter city or ZIP code'
           />
           <button type='submit'>Search</button>
