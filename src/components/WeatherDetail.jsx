@@ -32,11 +32,14 @@ const WeatherDetail = () => {
       </h2>
       <div className='today-weather'>
         <h3 className='current-temp'>{Math.round(dayWeather.main.temp)}°</h3>
-        <img
-          src={`https://openweathermap.org/img/wn/${dayWeather.weather[0].icon}@2x.png`}
-          alt={dayWeather.weather[0].description}
-          width='100'
-        />
+
+        <div>
+          <img
+            src={`https://openweathermap.org/img/wn/${dayWeather.weather[0].icon}@2x.png`}
+            alt={dayWeather.weather[0].description}
+            width='100'
+          />
+        </div>
         <p className='condition'>{dayWeather.weather[0].description}</p>
         <br />
         <br />

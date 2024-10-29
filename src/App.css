@@ -48,6 +48,7 @@ h3 {
   background-color: #05257e;
   padding: 2rem 0rem;
   border-radius: 8px;
+  text-align: center;
 }
 .condition {
   font-size: 1.5rem;
@@ -254,7 +255,11 @@ select:focus {
   margin: 0.5rem 0;
   color: #ddd;
 }
-
+.weather-detail div {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
 .today-weather {
   background-color: #05257e;
   padding: 2rem;
