@@ -40,7 +40,9 @@ h3 {
   margin: 0;
 }
 .today-weather {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: fit;
   text-align: center;
   margin: 2rem auto;
   background-color: #05257e;
@@ -93,13 +95,6 @@ form {
   .weather-grid {
     grid-template-columns: 1fr;
   }
-}
-
-.weather-card {
-  background: #05257e;
-  padding: 1rem;
-  border-radius: 8px;
-  text-align: center;
 }
 
 .forecast-type {
@@ -201,4 +196,94 @@ select:focus {
 
 .forecast-type {
   margin-left: 1rem;
+}
+
+.temperature-chart {
+  margin: 2rem auto;
+  width: 80%;
+  max-width: 600px;
+}
+
+.weather-card {
+  text-decoration: none;
+  color: inherit;
+  background-color: #05257e;
+  padding: 1rem;
+  border-radius: 8px;
+  display: block;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.weather-card:hover {
+  transform: scale(1.05);
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #007bff;
+  background: rgb(0, 0, 0);
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.weather-detail {
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  padding: 0rem;
+  color: #fff;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.weather-detail h2 {
+  font-size: 3rem;
+  color: #ffbf36;
+  margin-bottom: 1.5rem;
+}
+
+.weather-detail p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: #ddd;
+}
+
+.today-weather {
+  background-color: #05257e;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+.today-weather .current-temp {
+  font-size: 3rem;
+  color: white;
+  margin: 0.5rem 0;
+}
+
+.today-weather .condition,
+.today-weather .stats {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+  color: #007bff;
+  font-size: 1rem;
+}
+
+.back-link:hover {
+  text-decoration: underline;
 }

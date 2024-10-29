@@ -1,27 +1,24 @@
-# Web Development Project 5 - _My Weather App_
+# Web Development Project 6 - _My Weather App_
 
 Submitted by: **Nereida Rondon**
 
-This web app: **Allows users to check the current weather and 5-day forecast for any city by using the OpenWeather API. Users can switch between Fahrenheit and Celsius, filter weather conditions, and choose between displaying today's forecast, the 5-day forecast, or both.**
+This web app: **Allows users to check the current weather and 5-day forecast for any city by using the OpenWeather API. Users can switch between Fahrenheit and Celsius, filter weather conditions, and choose between displaying today's forecast, the 5-day forecast, or both. The app also features interactive data visualizations to provide insights into temperature trends over the forecast period. Each forecast day in the 5-day forecast can be clicked to view a detailed page with more in-depth weather information. Each detail page has a unique, shareable link.**
 
-Time spent: **5** hours spent in total
+Time spent: **8** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [x] **The app displays the current weather for the searched city, including temperature, condition, humidity, and wind speed.**
-- [x] **Users can search for weather data by city or ZIP code.**
-- [x] **The app displays a 5-day weather forecast, showing one forecast per day.**
-- [x] **Users can toggle between Fahrenheit and Celsius.**
-- [x] **Users can filter the display to show either today's weather or the 5-day forecast.**
-- [x] **The app displays summary statistics like average temperature over the forecast period.**
+- [x] **The app includes at least one unique chart developed using the fetched data that tells an interesting story.**
+- [x] **Clicking on an item in the list view displays more details about it.**
+- [x] **Each detail view of an item has a direct, unique link to that item’s detail view page.**
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented required features:
 
-<img src='/src/assets/week5.gif' title='Video Walkthrough' width='100%' alt='Video Walkthrough' />
+<img src='/src/assets/week6.gif' title='Video Walkthrough' width='100%' alt='Video Walkthrough' />
 
 GIF created with LiceCap
 
@@ -29,9 +26,11 @@ GIF created with LiceCap
 
 Some challenges encountered during development:
 
-- **Responsive Design:** Ensuring that the weather cards and filters display properly across different screen sizes (especially stacking elements vertically on mobile while maintaining a row-based layout on larger screens).
-- **Data Handling:** Managing and displaying both current weather data and forecast data from two different API endpoints was tricky and required careful handling of asynchronous API calls.
-- **Temperature Toggle:** Implementing a smooth toggle between Fahrenheit and Celsius required recalculating and re-fetching data in the correct units dynamically.
+- **Routing and Navigation:** Structuring the app to enable a detailed view of the weather for a specific date required setting up dynamic routes. Ensuring that navigation between the home view and the detail view displayed only the relevant components involved restructuring routing logic across multiple files and separating the routes from the main app component.
+
+- **Data Sharing Across Routes:** Displaying the correct weather data in the detailed view required sharing data across components. To achieve this without redundant API calls, we implemented a context provider to manage and provide weather data globally. This approach simplified data management but introduced complexity in setting up and accessing the data in multiple nested components.
+
+- **Date Formatting Consistency:** To improve the user experience, we needed consistent and clear date formats, particularly for the detailed view page. Adjusting JavaScript’s `Date` object to format dates as “Month Day” instead of the default format required careful management of date strings and time zones to ensure accuracy.
 
 ## License
 

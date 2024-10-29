@@ -4,6 +4,8 @@ import Filters from './components/Filters';
 import Summary from './components/Summary';
 import TodayWeather from './components/TodayWeather';
 import './App.css';
+import TemperatureChart from './components/TemperatureChart';
+import AppRoutes from './AppRoutes';
 
 const App = () => {
   const [city, setCity] = useState('New York'); // Current city state
@@ -162,6 +164,9 @@ const App = () => {
               <p>No weather data available for the selected condition.</p>
             )}
           </div>
+          {weatherData && groupedWeatherData && (
+            <TemperatureChart forecastData={groupedWeatherData} />
+          )}
           {/* Summary Statistics */}
           <Summary weatherData={weatherData} />
         </>
